@@ -1,33 +1,61 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
-import MachuPicchu from './content/machupicchu.jpg';
+import Macawbackground from './content/macaw-background.jpg';
 
 
 export default function Home() {
+  const [hasScrolled, setHasScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setHasScrolled(window.scrollY > 0);
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="min-h-screen p-4 bg-amber-50">
-      
+    <div className="min-h-screen">
       {/* Header */}
-      <div className="rounded-md p-2" style={{ background: "var(--forest-moss)", color: "var(--willow-green)" }}>
-        <h1 className="text-4xl font-bold ml-4">IN WILD TRAVELS</h1>
-        <p className="mt-1 ml-4 text-sm">Take your next trip with In Wild Travels.</p>
+      <div className="fixed top-0 left-0 right-0 z-50">
+        <div
+          className="p-2 transition-colors duration-300"
+          style={{
+            background: hasScrolled ? "var(--accent-green)" : "transparent",
+            color: "var(--willow-green)",
+          }}
+        >
+          <h1 className="text-4xl font-bold ml-4">IN WILD TRAVELS</h1>
+          <p className="mt-1 ml-4 text-sm">Take your next trip with In Wild Travels.</p>
+        </div>
       </div>
       {/* Main content */}
 
       {/* Top Section */}
-      <div className="flex flex-col items-center mt-10">
+      <div className="relative w-full h-screen">
         <Image
-          src={MachuPicchu}
-          alt="Travel Image"
-          width={600}
-          height={400}
-          className="rounded-2xl shadow-lg p-2 shadow-green-950"
-          style={{background: "var(--black-forest)"}}
+          src={Macawbackground}
+          alt="Macaw in rainforest"
+          fill
+          priority
+          className="object-cover"
         />
-        <p className="mt-4 text-center">Discover new destinations and adventures.</p>
+        <div className="absolute inset-0 bg-black/25" />
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 px-4 text-center text-white">
+          <p>Discover new destinations and adventures.</p>
+        </div>
       </div>
       {/* About Section */}
-      <div className="mt-16 px-4">
-        <h2 className="text-2xl font-semibold mb-4">About Us</h2>
+      <div className="mt-16 px-4 pb-10">
+        <h2 className="text-2xl font-semibold mb-4 flex flex-col items-center">About Us</h2>
         <p>
           In Wild Travels is your go-to travel agency for unforgettable experiences. We specialize in crafting personalized travel itineraries that cater to your unique preferences and interests. Whether you're seeking a relaxing beach getaway, an adventurous mountain trek, or a cultural city tour, we have the expertise to make your dream trip a reality.
         </p>
