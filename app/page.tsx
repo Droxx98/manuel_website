@@ -38,7 +38,6 @@ export default function Home() {
           <p className="mt-1 ml-4 text-sm" style={{ color: "var(--willow-green)" }}>Take your next trip with In Wild Travels.</p>
         </div>
       </div>
-      {/* Main content */}
 
       {/* Top Section */}
       <div className="relative w-full h-screen">
@@ -54,16 +53,35 @@ export default function Home() {
           <p className="text-white">Discover new destinations and adventures.</p>
         </div>
       </div>
+
       {/* About Section */}
-      <div className="mt-16 px-4 pb-10">
-        <h2 className="text-4xl font-bold flex flex-col items-center">About Us</h2>
-        <h4 className="text-md mb-8 text-center">Our foundation is our passion for nature and our mission is to preserve it</h4>
-        <p className="text-center font-serif mb-4">
-          In Wild Travels is your go-to travel agency for unforgettable experiences. We specialize in crafting personalized travel itineraries that cater to your unique preferences and interests. Whether you're seeking a relaxing beach getaway, an adventurous mountain trek, or a cultural city tour, we have the expertise to make your dream trip a reality.
-        </p>
-        <p className="text-center font-serif mb-4">In Wild Peru consists of Manuel Mori, from Iquitos by the Amazon River in Peru. Based on Manuel’s vast knowledge of tourism and guiding in Peru.</p>
-        <p className="text-center font-serif">”We commit to making our trips a way of helping the nature and local people. The preservation of wild nature and protecting wildlife is our great passion that fuels us in our work. Peru is a treasure that we must protect. We believe it’s possible to contribute and to make a real difference. We'd be honored to get the opportunity to share with you our passion for this remarkable country and it's incredible diversity.” We extend a very warm welcome to you.</p>
-      </div>
+      <section className="mt-14 px-4 pb-12" style={{ background: "var(--bg-page)" }}>
+        <h2 className="text-3xl font-bold text-center">About Us</h2>
+        <h4 className="text-sm mt-2 mb-6 text-center">Passion for nature. Travel with purpose.</h4>
+
+        <div
+          className="mx-auto flex max-w-5xl flex-col items-center gap-6 rounded-lg p-4 md:flex-row md:items-start md:gap-8 md:p-6"
+          style={{ background: "var(--bg-surface)", border: "1px solid var(--surface-border)" }}
+        >
+          <div className="w-70 md:w-80 shrink-0 rounded-md" style={{ background: "var(--forest-moss)" }}>
+            <Image
+              src={Manuel}
+              alt="Manuel Mori, founder of In Wild Travels"
+              className="h-auto w-full rounded-md object-cover"
+            />
+          </div>
+
+          <div className="w-full text-center md:text-left" style={{ color: "var(--willow-green)" }}>
+            <h3 className="text-xl font-semibold" style={{ color: "var(--willow-green)" }}>Meet Manuel Mori</h3>
+            <p className="mt-3 font-serif" style={{ color: "var(--willow-green)" }}>
+              Manuel comes from Iquitos by the Amazon River and leads In Wild Travels with deep local expertise in guiding and tourism across Peru.
+            </p>
+            <p className="mt-3 font-serif" style={{ color: "var(--willow-green)" }}>
+              Every trip is designed to support local communities and protect Peru’s wildlife and wild places, while giving you a meaningful and unforgettable experience.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* Footer */}
     </div>
