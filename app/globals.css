@@ -16,18 +16,11 @@
   --accent-green: #2f7a53;
   --accent-lime: #7fbf3f;
   --accent-earth: #8a5a3a;
+  --olive-leaf: #5d7a69;
+  --surface-border: #bfdac6;
 
   --background: var(--bg-page);
   --foreground: var(--text-main);
-}
-
-body {
-  background: var(--willow-green);
-  color: var(--willow-green);
-}
-
-p {
-  color: var(--olive-leaf);
 }
 
 @theme inline {
@@ -37,10 +30,13 @@ p {
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
   :root {
-    --background: #000000;
-    --foreground: #ffffff;
+    --background: #0f2b1f;
+    --foreground: #e2f2e6;
+    --text-main: #e2f2e6;
+    --text-muted: #bfdac6;
+    --surface-border: #2f7a53;
   }
 }
 
@@ -48,5 +44,53 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  color: var(--black-forest);
+}
+
+h2 {
+  color: var(--forest-moss);
+}
+
+h3 {
+  color: var(--accent-green);
+}
+
+h4,
+h5,
+h6 {
+  color: var(--accent-earth);
+}
+
+p {
+  color: var(--text-muted);
+}
+
+ul,
+ol {
+  color: var(--text-main);
+}
+
+li::marker {
+  color: var(--accent-green);
+}
+
+a {
+  color: var(--accent-green);
+}
+
+a:hover {
+  color: var(--forest-moss);
+}
+
+strong,
+b {
+  color: var(--black-forest);
+}
+
+img {
+  border: 1px solid var(--surface-border);
 }
 
